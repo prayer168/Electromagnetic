@@ -355,6 +355,7 @@ function initElectromagnetLab() {
   const rightPoleGlow = document.getElementById("right-pole-glow");
   const flowParticlesGroup = document.getElementById("flow-particles-group");
   const emMagneticLines = document.getElementById("em-magnetic-lines");
+  const wireSwitchToBattery = document.getElementById("wire-switch-to-battery");
 
   let isPowerOn = false;
   const totalClips = 16;
@@ -478,12 +479,15 @@ function initElectromagnetLab() {
     if (batCount === 1) {
       battery2.style.display = "none";
       battery3.style.display = "none";
+      wireSwitchToBattery.setAttribute("d", "M 200 340 C 200 370, 250 370, 250 370");
     } else if (batCount === 2) {
       battery2.style.display = "block";
       battery3.style.display = "none";
+      wireSwitchToBattery.setAttribute("d", "M 200 340 C 200 370, 170 370, 170 370");
     } else {
       battery2.style.display = "block";
       battery3.style.display = "block";
+      wireSwitchToBattery.setAttribute("d", "M 200 340 C 200 370, 90 370, 90 370");
     }
   }
 
