@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>奇妙的電磁世界 - 國小自然數位教材</title>
+  <!-- Google Fonts: Outfit & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+  <!-- Space & Electromagnetic Particle Background -->
+  <div class="space-bg">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Main Header -->
+    <header class="app-header">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGrad)" stroke-width="6" />
+          <path d="M30,50 Q40,30 50,50 T70,50" fill="none" stroke="#00f3ff" stroke-width="4" stroke-linecap="round" />
+          <path d="M30,50 Q40,70 50,50 T70,50" fill="none" stroke="#d300ff" stroke-width="4" stroke-linecap="round" />
+          <circle cx="50" cy="50" r="10" fill="#00f3ff" class="pulse-core" />
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f3ff" />
+              <stop offset="100%" stop-color="#d300ff" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="logo-text">
+          <h1>奇妙的電磁世界</h1>
+          <span class="sub-title">115國小自然領域互動教材</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="app-nav">
+        <button class="nav-tab active" data-tab="tab-learning">
+          <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z M5 13.18v4L12 21l7-3.82v-4L12 17 5 13.18z"/></svg>
+          學習目標
+        </button>
+        <button class="nav-tab" data-tab="tab-lab">
+          <svg viewBox="0 0 24 24" class="tab-icon"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          實驗模擬
+        </button>
+        <button class="nav-tab" data-tab="tab-apps">
+          <svg viewBox="0 0 24 24" class="tab-icon"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+          生活應用
+        </button>
+        <button class="nav-tab" data-tab="tab-quiz">
+          <svg viewBox="0 0 24 24" class="tab-icon"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0-2-.9-2-2V4c0-1.1-.9-2-2-2zm-6 16c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm1.07-5.53c-.3.26-.57.53-.57 1.03h-2c0-1.4 1-1.8 1.43-2.18.33-.28.57-.49.57-.82 0-.55-.45-1-1-1s-1 .45-1 1H7.5c0-2.2 1.8-4 4-4s4 1.8 4 4c0 .88-.39 1.4-1.43 2.5z"/></svg>
+          闖關大挑戰
+        </button>
+      </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+
+      <!-- TAB 1: LEARNING OBJECTIVES -->
+      <section id="tab-learning" class="tab-content active">
+        <div class="intro-grid">
+          <div class="intro-hero glass-panel">
+            <h2>探索隱形的電磁力量！</h2>
+            <p>在我們的生活周遭，有許多看不到卻非常神奇的力量在運作。指北針為什麼總是朝著北方？鐵釘繞上電線通電後，竟然能像磁鐵一樣吸起迴紋針？這些奇妙的現象都和「電」與「磁」有著密不可分的關係。現在就讓我們一起來解開電磁的奧秘吧！</p>
+            <div class="hero-graphic">
+              <!-- Animated Earth Dipole & Coil SVG -->
+              <svg viewBox="0 0 400 200" class="hero-svg">
+                <defs>
+                  <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.3" />
+                    <stop offset="100%" stop-color="#00f3ff" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+                <!-- Earth -->
+                <circle cx="100" cy="100" r="60" fill="#0b1e36" stroke="#00f3ff" stroke-width="2" />
+                <path d="M60,100 Q80,70 100,100 T140,100" fill="none" stroke="#00f3ff" stroke-opacity="0.3" />
+                <line x1="100" y1="20" x2="100" y2="180" stroke="#ff416c" stroke-dasharray="4,4" stroke-width="2" />
+                <text x="100" y="35" fill="#ff416c" text-anchor="middle" font-size="12" font-weight="bold">地磁 S (地理北)</text>
+                <!-- Electromagnet -->
+                <rect x="250" y="85" width="100" height="30" rx="5" fill="#555" stroke="#aaa" />
+                <!-- Coil wraps -->
+                <path d="M260,80 C265,80 265,120 270,120 M275,80 C280,80 280,120 285,120 M290,80 C295,80 295,120 300,120 M305,80 C310,80 310,120 315,120 M320,80 C325,80 325,120 330,120" fill="none" stroke="#ff8c00" stroke-width="4" stroke-linecap="round" />
+                <circle cx="300" cy="100" r="40" fill="url(#glow)" class="pulse-glow" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="learning-cards">
+            <!-- Card 1 -->
+            <div class="card glass-panel">
+              <div class="card-icon cyan-theme">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12m10-7v7l4 4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <h3>地球是個大磁鐵</h3>
+              <p>認識地球內部的巨大地磁場，探討為何地磁的北極其實靠近地理的南極。</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card glass-panel">
+              <div class="card-icon purple-theme">
+                <svg viewBox="0 0 24 24"><path d="M17 16H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2zm3-4H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <h3>指北針能指引方向</h3>
+              <p>利用磁鐵同極相斥、異極相吸原理，說明指北針的N極如何與地磁S極互動。</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card glass-panel">
+              <div class="card-icon orange-theme">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/></svg>
+              </div>
+              <h3>神奇的電磁鐵</h3>
+              <p>探索如何藉由電流產生磁場，動手改變線圈與電流來觀察磁力強弱的變化。</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="card glass-panel">
+              <div class="card-icon magenta-theme">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 6h-4v2h4v2h-4v2h4v2H9V7h6v2z" fill="currentColor"/></svg>
+              </div>
+              <h3>生活中的電磁鐵</h3>
+              <p>觀察電磁起重機、磁浮列車與電鈴，了解電磁鐵在現代科技的絕妙應用。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: INTERACTIVE LAB -->
+      <section id="tab-lab" class="tab-content">
+        <div class="lab-container">
+          <!-- Lab Selector Toggle -->
+          <div class="lab-toggle-bar glass-panel">
+            <button class="lab-toggle-btn active" data-subtab="lab-earth">
+              <svg viewBox="0 0 24 24" class="sub-tab-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><line x1="12" y1="2" x2="12" y2="22" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/></svg>
+              地磁與指北針實驗
+            </button>
+            <button class="lab-toggle-btn" data-subtab="lab-electromagnet">
+              <svg viewBox="0 0 24 24" class="sub-tab-icon"><path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99z M13 16h-2v2h2v-2zm0-6h-2v4h2v-4z" fill="currentColor"/></svg>
+              電磁鐵探究實驗室
+            </button>
+          </div>
+
+          <!-- SUBTAB: Earth Magnetic Field -->
+          <div id="lab-earth" class="lab-sub-content active">
+            <div class="lab-workspace">
+              <!-- Controls -->
+              <div class="lab-controls glass-panel">
+                <div class="control-header">
+                  <h3>🌍 地球與指北針</h3>
+                  <p class="description">拖曳或點擊右方畫面中的指北針，觀察指北針指針在地球各個位置的偏轉方向與磁力線的關係！</p>
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">輔助線顯示</label>
+                  <div class="toggle-switch-wrapper">
+                    <label class="switch-container">
+                      <input type="checkbox" id="btn-show-lines" checked>
+                      <span class="switch-slider"></span>
+                    </label>
+                    <span class="toggle-text">顯示地球磁力線</span>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label">內部磁鐵顯示</label>
+                  <div class="toggle-switch-wrapper">
+                    <label class="switch-container">
+                      <input type="checkbox" id="btn-show-inner-magnet" checked>
+                      <span class="switch-slider"></span>
+                    </label>
+                    <span class="toggle-text">顯示地球內部磁鐵</span>
+                  </div>
+                </div>
+
+                <div class="lab-instruction-box">
+                  <h4>💡 知識探究：</h4>
+                  <ul>
+                    <li>地球內部就像有一根巨大的條形磁鐵。</li>
+                    <li>地磁的<strong>S極</strong>位於地理的<strong>北極</strong>附近；地磁的<strong>N極</strong>位於地理的<strong>南極</strong>附近。</li>
+                    <li>指北針的<strong>N極（紅色）</strong>會與地磁S極互相吸引，因此指北針的N極總是指向<strong>北方</strong>。</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Simulator Canvas -->
+              <div class="lab-canvas-wrapper glass-panel">
+                <div class="canvas-title">地磁引導系統模擬器</div>
+                <div class="canvas-inner" id="earth-canvas-container">
+                  <!-- Interactive SVG -->
+                  <svg id="earth-svg" viewBox="0 0 600 500" width="100%" height="100%">
+                    <defs>
+                      <!-- Earth gradient -->
+                      <radialGradient id="earthGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="70%" stop-color="#0d2c54" />
+                        <stop offset="90%" stop-color="#1b497e" />
+                        <stop offset="100%" stop-color="#2c699a" />
+                      </radialGradient>
+                      
+                      <!-- Magnetic field glow -->
+                      <filter id="fieldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="4" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                    </defs>
+
+                    <!-- Magnetic field lines (dynamic group) -->
+                    <g id="magnetic-lines-group"></g>
+
+                    <!-- Earth Body -->
+                    <g id="earth-group">
+                      <!-- Orbit & Axis -->
+                      <line x1="300" y1="50" x2="300" y2="450" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="6,6" />
+                      <!-- Earth sphere -->
+                      <circle cx="300" cy="250" r="120" fill="url(#earthGrad)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" />
+                      
+                      <!-- Continents layout simplified -->
+                      <path d="M260,190 Q250,170 270,160 T290,170 T270,210 Z" fill="#1b4332" opacity="0.8" />
+                      <path d="M320,220 Q340,240 330,260 T300,280 T290,240 Z" fill="#2d6a4f" opacity="0.8" />
+                      <path d="M280,310 Q300,340 290,360 T270,350 Z" fill="#40916c" opacity="0.8" />
+                      <path d="M310,140 Q330,130 340,150 T320,165 Z" fill="#1b4332" opacity="0.8" />
+                      
+                      <!-- Geographic labels -->
+                      <text x="300" y="110" fill="#00f3ff" font-size="14" font-weight="900" text-anchor="middle">地理北極 (N)</text>
+                      <text x="300" y="405" fill="#00f3ff" font-size="14" font-weight="900" text-anchor="middle">地理南極 (S)</text>
+
+                      <!-- Geographic equator -->
+                      <path d="M180,250 C240,265 360,265 420,250" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4,4" />
+                      <text x="430" y="254" fill="rgba(255,255,255,0.5)" font-size="11">赤道</text>
+                    </g>
+
+                    <!-- Inner Magnet representation -->
+                    <g id="inner-magnet-group" transform="translate(300, 250)">
+                      <!-- Bar magnet body -->
+                      <rect x="-18" y="-70" width="36" height="70" fill="#00f3ff" stroke="#fff" stroke-width="1" rx="4" />
+                      <rect x="-18" y="0" width="36" height="70" fill="#ff416c" stroke="#fff" stroke-width="1" rx="4" />
+                      <text x="0" y="-30" fill="#001d3d" font-size="16" font-weight="bold" text-anchor="middle" dominant-baseline="middle">S</text>
+                      <text x="0" y="40" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle" dominant-baseline="middle">N</text>
+                      <!-- Indicator text -->
+                      <text x="45" y="-30" fill="#00f3ff" font-size="11" opacity="0.9">地磁 S 極</text>
+                      <text x="45" y="40" fill="#ff416c" font-size="11" opacity="0.9">地磁 N 極</text>
+                    </g>
+
+                    <!-- Dynamic Compasses will be placed here -->
+                    <g id="draggable-compasses-group"></g>
+
+                    <!-- Target / Hints for dragging -->
+                    <circle cx="300" cy="60" r="15" fill="none" stroke="#ff416c" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.6" />
+                    <text x="300" y="40" fill="#ff416c" font-size="10" text-anchor="middle" opacity="0.7">常規指北處</text>
+                  </svg>
+
+                  <!-- Instruction Overlay -->
+                  <div class="drag-hint-overlay">
+                    <span>🖱️ 點擊畫面任意處放置指北針，亦可隨意拖曳移動！</span>
+                  </div>
+
+                  <!-- Reset Button -->
+                  <button id="btn-reset-earth" class="canvas-btn">重新整理</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBTAB: Electromagnet Lab -->
+          <div id="lab-electromagnet" class="lab-sub-content">
+            <div class="lab-workspace">
+              <!-- Controls -->
+              <div class="lab-controls glass-panel">
+                <div class="control-header">
+                  <h3>⚡ 電磁鐵探究實驗</h3>
+                  <p class="description">透過調整圈數、電壓及極性，觀察電磁鐵的磁力如何產生變化！</p>
+                </div>
+
+                <!-- Control: Switch -->
+                <div class="control-group">
+                  <label class="control-label">開關控制</label>
+                  <div class="power-btn-wrapper">
+                    <button id="btn-power-switch" class="power-btn off">OFF (斷路)</button>
+                  </div>
+                </div>
+
+                <!-- Control: Turns -->
+                <div class="control-group">
+                  <label class="control-label">線圈圈數 (Turns)</label>
+                  <div class="slider-group">
+                    <input type="range" id="param-turns" min="10" max="40" step="15" value="25">
+                    <div class="slider-labels">
+                      <span>10圈 (少)</span>
+                      <span>25圈 (中)</span>
+                      <span>40圈 (多)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Control: Batteries -->
+                <div class="control-group">
+                  <label class="control-label">電池個數 (電流強度)</label>
+                  <div class="slider-group">
+                    <input type="range" id="param-batteries" min="1" max="3" step="1" value="2">
+                    <div class="slider-labels">
+                      <span>1顆 (弱)</span>
+                      <span>2顆 (中)</span>
+                      <span>3顆 (強)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Control: Direction -->
+                <div class="control-group">
+                  <label class="control-label">電流方向 (正負極)</label>
+                  <div class="radio-group">
+                    <label class="radio-container">
+                      <input type="radio" name="param-direction" value="normal" checked>
+                      <span class="checkmark"></span>
+                      正接 (左正右負)
+                    </label>
+                    <label class="radio-container">
+                      <input type="radio" name="param-direction" value="reverse">
+                      <span class="checkmark"></span>
+                      反接 (左負右正)
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Realtime Stats Panel -->
+                <div class="stats-panel">
+                  <div class="stat-row">
+                    <span>當前磁力強度：</span>
+                    <span id="label-magnet-strength" class="stat-val">0 %</span>
+                  </div>
+                  <div class="stat-row">
+                    <span>吸起迴紋針數：</span>
+                    <span id="label-clips-count" class="stat-val">0 個</span>
+                  </div>
+                  <div class="stat-row">
+                    <span>鐵釘左端極性：</span>
+                    <span id="label-left-pole" class="stat-val">-</span>
+                  </div>
+                  <div class="stat-row">
+                    <span>鐵釘右端極性：</span>
+                    <span id="label-right-pole" class="stat-val">-</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Canvas / SVG -->
+              <div class="lab-canvas-wrapper glass-panel">
+                <div class="canvas-title">電磁鐵繞線與迴紋針模擬</div>
+                <div class="canvas-inner" id="electromagnet-canvas-container">
+                  <svg id="em-svg" viewBox="0 0 600 480" width="100%" height="100%">
+                    <defs>
+                      <!-- Nail Gradient -->
+                      <linearGradient id="nailGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#4a4e5d" />
+                        <stop offset="30%" stop-color="#7f8c8d" />
+                        <stop offset="50%" stop-color="#bdc3c7" />
+                        <stop offset="80%" stop-color="#7f8c8d" />
+                        <stop offset="100%" stop-color="#34495e" />
+                      </linearGradient>
+                      
+                      <!-- Battery Gradient -->
+                      <linearGradient id="batteryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#c8102e" />
+                        <stop offset="70%" stop-color="#d32f2f" />
+                        <stop offset="100%" stop-color="#800" />
+                      </linearGradient>
+                      
+                      <!-- Glowing Magnetic Poles -->
+                      <radialGradient id="northGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ff416c" stop-opacity="0.8" />
+                        <stop offset="100%" stop-color="#ff416c" stop-opacity="0" />
+                      </radialGradient>
+                      <radialGradient id="southGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.8" />
+                        <stop offset="100%" stop-color="#00f3ff" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+
+                    <!-- Background magnetic field lines for Electromagnet -->
+                    <g id="em-magnetic-lines" opacity="0"></g>
+
+                    <!-- The Iron Nail (鐵釘) -->
+                    <g id="nail-group">
+                      <!-- Nail Head (left side) -->
+                      <path d="M 110 170 C 110 150, 130 150, 130 200 C 130 250, 110 250, 110 230 Z" fill="#7f8c8d" stroke="#555" stroke-width="1.5" />
+                      <!-- Nail Body -->
+                      <rect x="130" y="180" width="280" height="40" fill="url(#nailGrad)" stroke="#444" stroke-width="1" />
+                      <!-- Nail Point (right side) -->
+                      <path d="M 410 180 L 460 200 L 410 220 Z" fill="url(#nailGrad)" stroke="#444" stroke-width="1" />
+                    </g>
+
+                    <!-- Wire Coils (繞線) - will be rendered dynamically by JS -->
+                    <g id="wire-coils-under"></g>
+                    <g id="wire-coils-over"></g>
+
+                    <!-- Lead Wires to battery & switch -->
+                    <!-- Wire from nail-left to Switch -->
+                    <path id="wire-left" d="M 150 220 C 150 320, 100 320, 100 340" fill="none" stroke="#2196f3" stroke-width="4" stroke-linecap="round" />
+                    <!-- Wire from nail-right to Battery -->
+                    <path id="wire-right" d="M 390 220 C 390 320, 500 320, 500 340" fill="none" stroke="#2196f3" stroke-width="4" stroke-linecap="round" />
+
+                    <!-- Battery Pack (電池區) -->
+                    <g id="battery-pack-group" transform="translate(250, 370)">
+                      <!-- Battery 1 -->
+                      <g id="battery-1">
+                        <rect x="0" y="-15" width="70" height="30" fill="url(#batteryGrad)" stroke="#fff" stroke-width="1" rx="2" />
+                        <rect x="70" y="-7" width="6" height="14" fill="#d4af37" rx="1" />
+                        <rect x="0" y="-15" width="20" height="30" fill="#333" rx="2" /> <!-- Negative cap cap -->
+                        <text x="40" y="5" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">+</text>
+                        <text x="10" y="5" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">-</text>
+                      </g>
+                      <!-- Battery 2 (will be shown dynamically) -->
+                      <g id="battery-2" transform="translate(-80, 0)">
+                        <rect x="0" y="-15" width="70" height="30" fill="url(#batteryGrad)" stroke="#fff" stroke-width="1" rx="2" />
+                        <rect x="70" y="-7" width="6" height="14" fill="#d4af37" rx="1" />
+                        <rect x="0" y="-15" width="20" height="30" fill="#333" rx="2" />
+                        <text x="40" y="5" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">+</text>
+                        <text x="10" y="5" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">-</text>
+                      </g>
+                      <!-- Battery 3 (will be shown dynamically) -->
+                      <g id="battery-3" transform="translate(-160, 0)">
+                        <rect x="0" y="-15" width="70" height="30" fill="url(#batteryGrad)" stroke="#fff" stroke-width="1" rx="2" />
+                        <rect x="70" y="-7" width="6" height="14" fill="#d4af37" rx="1" />
+                        <rect x="0" y="-15" width="20" height="30" fill="#333" rx="2" />
+                        <text x="40" y="5" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">+</text>
+                        <text x="10" y="5" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">-</text>
+                      </g>
+                      <!-- Connecting lines/terminals -->
+                      <path d="M 76 0 L 90 0" stroke="#ffeb3b" stroke-width="3" />
+                      <!-- Negative terminal line to switch -->
+                      <path id="wire-battery-neg" d="M -160 0 L -170 0 C -170 0, -170 -30, -150 -30" fill="none" stroke="#2196f3" stroke-width="4" />
+                    </g>
+
+                    <!-- Knife Switch (閘刀開關) -->
+                    <g id="switch-group" transform="translate(100, 340)">
+                      <!-- Terminals -->
+                      <circle cx="0" cy="0" r="10" fill="#555" stroke="#aaa" />
+                      <circle cx="100" cy="0" r="10" fill="#555" stroke="#aaa" />
+                      <!-- Base line -->
+                      <rect x="-10" y="8" width="120" height="8" fill="#8d6e63" rx="2" />
+                      <!-- Switch Blade (rotatable) -->
+                      <g id="switch-blade" transform="rotate(-40, 0, 0)">
+                        <rect x="0" y="-4" width="105" height="8" fill="#f4d03f" stroke="#b7950b" rx="2" />
+                        <!-- Insulated Handle -->
+                        <rect x="85" y="-10" width="25" height="20" fill="#e74c3c" rx="4" />
+                      </g>
+                    </g>
+
+                    <!-- Connecting loop wires -->
+                    <path d="M 200 340 C 200 370, 250 370, 250 370" fill="none" stroke="#2196f3" stroke-width="4" />
+                    
+                    <!-- Paperclips container & clips (迴紋針區) -->
+                    <g id="paperclips-container"></g>
+
+                    <!-- Mini Compass near Electromagnet to show polarity -->
+                    <g id="em-compass-group" transform="translate(520, 200)">
+                      <!-- Outer ring -->
+                      <circle cx="0" cy="0" r="30" fill="#111" stroke="rgba(255,255,255,0.4)" stroke-width="2" />
+                      <!-- Direction marks -->
+                      <text x="0" y="-18" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" dominant-baseline="middle">N</text>
+                      <!-- Needle (rotatable) -->
+                      <g id="em-compass-needle" transform="rotate(0)">
+                        <polygon points="0,-24 6,0 0,4" fill="#ff416c" />
+                        <polygon points="0,24 6,0 0,-4" fill="#00f3ff" />
+                        <circle cx="0" cy="0" r="4" fill="#fff" />
+                      </g>
+                    </g>
+
+                    <!-- Polar Glow Elements -->
+                    <circle id="left-pole-glow" cx="120" cy="200" r="50" fill="url(#southGlow)" opacity="0" pointer-events="none" />
+                    <circle id="right-pole-glow" cx="440" cy="200" r="50" fill="url(#northGlow)" opacity="0" pointer-events="none" />
+
+                    <!-- Current flow indicators (發光點) -->
+                    <g id="flow-particles-group"></g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: LIFE APPLICATIONS -->
+      <section id="tab-apps" class="tab-content">
+        <div class="apps-layout">
+          <!-- App Sidebar -->
+          <div class="apps-sidebar glass-panel">
+            <h3 class="sidebar-title">⚡ 生活應用展示</h3>
+            <ul class="app-menu">
+              <li class="app-menu-item active" data-app="app-maglev">
+                <div class="menu-icon">🚄</div>
+                <div class="menu-text">
+                  <h4>磁浮列車</h4>
+                  <span>同極相斥、異極相吸</span>
+                </div>
+              </li>
+              <li class="app-menu-item" data-app="app-crane">
+                <div class="menu-icon">🏗️</div>
+                <div class="menu-text">
+                  <h4>電磁起重機</h4>
+                  <span>隨意開關磁力的廢鐵收集</span>
+                </div>
+              </li>
+              <li class="app-menu-item" data-app="app-bell">
+                <div class="menu-icon">🔔</div>
+                <div class="menu-text">
+                  <h4>自激式電鈴</h4>
+                  <span>通電與斷電的循環擺動</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- App Visual Workspace -->
+          <div class="apps-display glass-panel">
+            <!-- Maglev Train Application -->
+            <div id="app-maglev" class="app-demo-card active">
+              <div class="demo-info">
+                <h3>🚄 磁浮列車的原理</h3>
+                <p>磁浮列車的車身和軌道上裝有<strong>電磁鐵</strong>。藉由快速變換軌道電磁鐵的磁極性，與車身上的電磁鐵產生「前吸後推」的力量，就能以極高速度懸浮前進喔！</p>
+                <div class="demo-controls">
+                  <button id="btn-run-maglev" class="btn-primary">啟動懸浮行駛</button>
+                  <button id="btn-stop-maglev" class="btn-secondary">停止列車</button>
+                </div>
+              </div>
+              <div class="demo-visualization">
+                <svg id="svg-maglev" viewBox="0 0 500 300" width="100%" height="100%">
+                  <!-- Track -->
+                  <rect x="20" y="220" width="460" height="20" fill="#34495e" rx="4" />
+                  <!-- Track magnets -->
+                  <!-- Magnet 1 -->
+                  <g class="track-magnet" id="tm-1" transform="translate(60, 230)">
+                    <rect x="-20" y="0" width="40" height="15" fill="#555" stroke="#aaa" rx="2" />
+                    <text x="0" y="11" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" class="mag-text">-</text>
+                  </g>
+                  <!-- Magnet 2 -->
+                  <g class="track-magnet" id="tm-2" transform="translate(160, 230)">
+                    <rect x="-20" y="0" width="40" height="15" fill="#555" stroke="#aaa" rx="2" />
+                    <text x="0" y="11" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" class="mag-text">-</text>
+                  </g>
+                  <!-- Magnet 3 -->
+                  <g class="track-magnet" id="tm-3" transform="translate(260, 230)">
+                    <rect x="-20" y="0" width="40" height="15" fill="#555" stroke="#aaa" rx="2" />
+                    <text x="0" y="11" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" class="mag-text">-</text>
+                  </g>
+                  <!-- Magnet 4 -->
+                  <g class="track-magnet" id="tm-4" transform="translate(360, 230)">
+                    <rect x="-20" y="0" width="40" height="15" fill="#555" stroke="#aaa" rx="2" />
+                    <text x="0" y="11" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" class="mag-text">-</text>
+                  </g>
+                  
+                  <!-- Train Body -->
+                  <g id="maglev-train" transform="translate(60, 150)">
+                    <!-- Aerodynamic body -->
+                    <path d="M-50,20 L80,20 C110,20 130,40 140,55 L140,70 L-50,70 Z" fill="#e0e0e0" stroke="#777" stroke-width="2" />
+                    <rect x="-40" y="30" width="160" height="15" fill="#2c3e50" rx="3" /> <!-- Windows -->
+                    <!-- Train magnets -->
+                    <g id="train-magnet-left" transform="translate(-10, 75)">
+                      <rect x="-20" y="0" width="40" height="12" fill="#ff416c" rx="2" />
+                      <text x="0" y="10" fill="#fff" font-size="9" font-weight="bold" text-anchor="middle">N</text>
+                    </g>
+                    <g id="train-magnet-right" transform="translate(90, 75)">
+                      <rect x="-20" y="0" width="40" height="12" fill="#ff416c" rx="2" />
+                      <text x="0" y="10" fill="#fff" font-size="9" font-weight="bold" text-anchor="middle">N</text>
+                    </g>
+                    <!-- Floating gap glow -->
+                    <line x1="-50" y1="85" x2="140" y2="85" stroke="#00f3ff" stroke-width="3" stroke-dasharray="5,5" class="levitation-glow" opacity="0" />
+                  </g>
+
+                  <!-- Labels -->
+                  <text x="250" y="280" fill="rgba(255,255,255,0.6)" font-size="12" text-anchor="middle">當鐵極性快速交替變化，車體受斥力懸浮，受吸力/斥力水平前進</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Electromagnetic Crane Application -->
+            <div id="app-crane" class="app-demo-card">
+              <div class="demo-info">
+                <h3>🏗️ 電磁起重機</h3>
+                <p>起重機底端裝有強力的<strong>電磁鐵</strong>。只要將開關「通電」，電磁鐵產生強大磁力，便能吸起重達數噸的鋼鐵；移動到指定位置後「斷電」，磁力消失，鋼鐵就會安全落下！</p>
+                <div class="demo-controls">
+                  <button id="btn-crane-power" class="btn-primary">通電 (吸取)</button>
+                  <button id="btn-crane-left" class="btn-secondary">向左移動</button>
+                  <button id="btn-crane-right" class="btn-secondary">向右移動</button>
+                </div>
+              </div>
+              <div class="demo-visualization">
+                <svg id="svg-crane" viewBox="0 0 500 300" width="100%" height="100%">
+                  <!-- Background ground and recycle bins -->
+                  <line x1="20" y1="260" x2="480" y2="260" stroke="#555" stroke-width="4" />
+                  <!-- Left Bin (Scrap Pile) -->
+                  <rect x="40" y="220" width="80" height="40" fill="#7f8c8d" opacity="0.5" />
+                  <text x="80" y="245" fill="#fff" font-size="10" text-anchor="middle">鋼鐵原料區</text>
+                  <!-- Right Bin (Target) -->
+                  <rect x="360" y="210" width="100" height="50" fill="#27ae60" opacity="0.3" stroke="#27ae60" stroke-width="2" />
+                  <text x="410" y="240" fill="#fff" font-size="10" text-anchor="middle">成品收集箱</text>
+                  
+                  <!-- Crane Crane Scaffold (Static) -->
+                  <path d="M 230 260 L 250 80 L 270 260" fill="none" stroke="#bdc3c7" stroke-width="6" />
+                  <line x1="100" y1="80" x2="350" y2="80" stroke="#95a5a6" stroke-width="8" stroke-linecap="round" />
+
+                  <!-- Trolley & Magnet Hook (Horizontal Translation) -->
+                  <g id="crane-trolley" transform="translate(100, 80)">
+                    <rect x="-20" y="-4" width="40" height="8" fill="#34495e" />
+                    <!-- Cable -->
+                    <line x1="0" y1="4" x2="0" y2="60" stroke="#7f8c8d" stroke-width="3" />
+                    <!-- Electromagnet Head -->
+                    <g id="crane-magnet-head" transform="translate(0, 60)">
+                      <rect x="-25" y="0" width="50" height="15" fill="#34495e" stroke="#fff" rx="3" />
+                      <circle id="crane-glow" cx="0" cy="7" r="25" fill="url(#southGlow)" opacity="0" pointer-events="none" />
+                      <text x="0" y="11" fill="#fff" font-size="9" text-anchor="middle" id="crane-status-txt">OFF</text>
+                    </g>
+                    <!-- Scrap Metals Attached (g group) -->
+                    <g id="crane-attached-scrap" transform="translate(0, 75)"></g>
+                  </g>
+
+                  <!-- Loose Scrap metal on left ground -->
+                  <g id="loose-scrap-group"></g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Electric Bell Application -->
+            <div id="app-bell" class="app-demo-card">
+              <div class="demo-info">
+                <h3>🔔 自激式電鈴</h3>
+                <p>電鈴利用了<strong>自動斷電與通電</strong>的連鎖效應。當按下開關：
+                <br>1. 電磁鐵通電，吸引旁邊的鐵槌敲擊鈴檔。
+                <br>2. 鐵槌被吸過去的同時，電路「自動斷開」，磁力消失。
+                <br>3. 彈簧片把鐵槌拉回原位，電路再次接通，電磁鐵重新產生磁力！
+                <br>這項循環不斷重複，電鈴就會發出噹噹噹的連續響聲！</p>
+                <div class="demo-controls">
+                  <button id="btn-ring-bell" class="btn-primary">按下電鈴開關</button>
+                  <button id="btn-stop-bell" class="btn-secondary">放開開關</button>
+                </div>
+              </div>
+              <div class="demo-visualization">
+                <svg id="svg-bell" viewBox="0 0 500 300" width="100%" height="100%">
+                  <!-- Bell Gong (圓鈴) -->
+                  <circle cx="380" cy="120" r="45" fill="#f1c40f" stroke="#f39c12" stroke-width="3" />
+                  <circle cx="380" cy="120" r="10" fill="#d4ac0d" />
+                  
+                  <!-- Sound wave effect (scale animation when ringing) -->
+                  <circle id="bell-sound-wave" cx="380" cy="120" r="55" fill="none" stroke="#f1c40f" stroke-width="2" stroke-dasharray="4,4" opacity="0" />
+
+                  <!-- Electromagnet U-Shape core -->
+                  <path d="M 120 180 L 180 180 C 190 180, 190 110, 180 110 L 120 110" fill="none" stroke="#7f8c8d" stroke-width="20" stroke-linecap="square" />
+                  <!-- Coil wrapping on U-core -->
+                  <rect x="120" y="95" width="45" height="30" fill="#e67e22" rx="2" />
+                  <rect x="120" y="165" width="45" height="30" fill="#e67e22" rx="2" />
+                  
+                  <!-- Spring metal strip + Hammer Arm (pivoted at top) -->
+                  <g id="bell-hammer-group" transform="translate(230, 80)">
+                    <!-- Metal Strip (arm) -->
+                    <rect x="-4" y="0" width="8" height="110" fill="#bdc3c7" />
+                    <!-- Contact screw contact leaf -->
+                    <path d="M -4 40 L -20 40 L -20 50 L -4 50" fill="#b2b2b2" />
+                    <!-- Hammer Head (金屬小球) -->
+                    <circle cx="120" cy="40" r="15" fill="#7f8c8d" />
+                    <!-- Connecting bar to hammer -->
+                    <line x1="0" y1="40" x2="110" y2="40" stroke="#7f8c8d" stroke-width="4" />
+                    <!-- Iron Armature (鐵塊) attracted by coil -->
+                    <rect x="-15" y="45" width="12" height="35" fill="#34495e" />
+                  </g>
+
+                  <!-- Contact Screw (接觸螺絲) -->
+                  <g id="bell-contact-screw" transform="translate(190, 125)">
+                    <rect x="0" y="-8" width="20" height="16" fill="#f39c12" />
+                    <rect x="5" y="-3" width="15" height="6" fill="#fff" />
+                    <!-- Spark effect -->
+                    <path id="spark-glow" d="M 0 0 L -8 -8 M 0 0 L -8 8 M 0 0 L -12 0" stroke="#00f3ff" stroke-width="2" opacity="0" />
+                  </g>
+
+                  <!-- Circuit lines connecting elements -->
+                  <!-- Battery -->
+                  <g transform="translate(80, 240)">
+                    <rect x="0" y="-10" width="40" height="20" fill="#333" rx="2" />
+                    <rect x="40" y="-5" width="4" height="10" fill="#e67e22" />
+                    <text x="20" y="5" fill="#fff" font-size="10" text-anchor="middle">電 池</text>
+                  </g>
+                  <!-- Switch button -->
+                  <g id="bell-switch-btn" transform="translate(260, 240)">
+                    <rect x="-20" y="-10" width="40" height="20" fill="#7f8c8d" rx="4" />
+                    <circle id="bell-push-button" cx="0" cy="-10" r="8" fill="#e74c3c" />
+                  </g>
+
+                  <!-- Circuit Wires -->
+                  <path d="M 120 240 L 140 240 L 140 180" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
+                  <path d="M 120 110 L 80 110 L 80 230" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
+                  <path d="M 230 80 L 230 50 L 280 50 L 280 230" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: QUIZ CHALLENGE -->
+      <section id="tab-quiz" class="tab-content">
+        <div class="quiz-container glass-panel">
+          <div class="quiz-welcome" id="quiz-welcome-screen">
+            <div class="welcome-icon">⚡🏆</div>
+            <h2>電磁王國大挑戰</h2>
+            <p>你已經學會了地磁、電磁鐵的奧秘以及生活中的電磁應用了嗎？來挑戰電磁王國的 5 道關卡，獲得專屬的「電磁大師」榮譽證書吧！</p>
+            <button id="btn-start-quiz" class="btn-primary">開始挑戰</button>
+          </div>
+
+          <div class="quiz-gameplay hide" id="quiz-gameplay-screen">
+            <!-- Progress bar -->
+            <div class="quiz-progress-bar">
+              <div class="progress-fill" id="quiz-progress-fill"></div>
+            </div>
+            
+            <div class="quiz-status">
+              <span class="question-number" id="label-question-num">問題 1 / 5</span>
+              <span class="quiz-score" id="label-current-score">目前得分：0 分</span>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-card">
+              <h3 id="question-text">題目載入中...</h3>
+              <div class="options-list" id="options-container">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Explanation / Feedback Box -->
+            <div class="feedback-box hide" id="quiz-feedback">
+              <div class="feedback-title" id="feedback-title">回答正確！</div>
+              <div class="feedback-desc" id="feedback-desc">解析內容</div>
+              <button id="btn-next-question" class="btn-primary">下一題</button>
+            </div>
+          </div>
+
+          <!-- Certificate Screen -->
+          <div class="quiz-certificate-screen hide" id="quiz-certificate-screen">
+            <div class="certificate-wrapper" id="print-certificate">
+              <div class="cert-border">
+                <div class="cert-body">
+                  <div class="cert-ribbon">🏆</div>
+                  <h1 class="cert-title">榮譽證書</h1>
+                  <p class="cert-subtitle">國小自然領域數位學習認證</p>
+                  
+                  <div class="cert-user-section">
+                    <p class="cert-congrats">恭喜學員</p>
+                    <div class="cert-name-input-wrap">
+                      <input type="text" id="student-name-input" value="自然小尖兵" placeholder="請輸入姓名">
+                    </div>
+                  </div>
+
+                  <p class="cert-text">
+                    在《奇妙的電磁世界》數位教材中，成功通過了地磁現象、電磁鐵物理探究及生活電磁應用的重重關卡，表現優異，特頒此證！
+                  </p>
+
+                  <div class="cert-score-box">
+                    <div class="cert-score-label">挑戰成績</div>
+                    <div class="cert-score-value" id="cert-score-val">100</div>
+                  </div>
+
+                  <div class="cert-footer">
+                    <div class="cert-sign">
+                      <span class="sign-line">數位教材中心</span>
+                      <span class="sign-title">認證單位</span>
+                    </div>
+                    <div class="cert-date">
+                      <span id="cert-date-val" class="sign-line">2026年6月7日</span>
+                      <span class="sign-title">頒發日期</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cert-actions">
+              <button id="btn-print-cert" class="btn-primary">📄 列印 / 儲存證書</button>
+              <button id="btn-restart-quiz" class="btn-secondary">重新挑戰</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer-info">
+      <p>© 2026 115國小自然領域中心數位教材開發小組 - 奇妙的電磁世界互動網頁</p>
+    </footer>
+  </div>
+
+  <script src="app.js?v=1" defer></script>
+</body>
+</html>
